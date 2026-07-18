@@ -1,0 +1,276 @@
+The application should include a production-ready AI Voice Assistant architecture that is frontend-complete and backend-ready.
+
+The UI should NOT simulate random conversations or navigate freely.
+
+Instead, design the interface so that a backend LLM (Claude, Gemini, OpenAI or any future AI model) can be connected without changing the UI.
+
+The assistant should have three layers:
+
+Wake & Listen
+Context Understanding
+Action Execution
+
+--------------------------------------------------
+
+VOICE ENTRY
+
+The microphone should be available on every screen.
+
+Pressing it opens a bottom sheet instead of immediately listening.
+
+Bottom Sheet:
+
+🎤 Speak
+⌨️ Type instead
+🔊 Read this page
+❌ Cancel
+
+--------------------------------------------------
+
+SCREEN CONTEXT
+
+Every screen must expose a hidden context object for backend integration.
+
+Examples:
+
+Dashboard
+
+context = dashboard
+
+allowedActions:
+Read today's weather
+Explain weather
+Read tasks
+Open crop details
+Open market
+
+Weather
+
+context = weather
+
+allowedActions:
+Read forecast
+Explain rain probability
+Explain humidity
+Explain spraying window
+
+Marketplace
+
+context = marketplace
+
+allowedActions:
+Search products
+Compare products
+Read product details
+
+Crop Details
+
+context = crop_details
+
+allowedActions:
+Explain crop stage
+Explain disease risk
+Read cultivation tips
+
+Scan Results
+
+context = scan_result
+
+allowedActions:
+Explain disease
+Read medicine dosage
+Explain confidence score
+Read prevention tips
+
+Community
+
+context = community
+
+allowedActions:
+Read post
+Read comments
+Ask community
+
+Settings
+
+context = settings
+
+allowedActions:
+Explain settings
+Change language
+Toggle touch sounds
+
+--------------------------------------------------
+
+AUTHENTICATION RULES
+
+Before Login
+
+The assistant may ONLY:
+
+• Read page contents
+• Explain onboarding steps
+• Change language
+• Explain buttons
+
+The assistant MUST NOT:
+
+• Navigate to protected pages
+• Access dashboard
+• Access scan history
+• Access profile
+• Open marketplace
+• Open community
+• Change user data
+
+After Login
+
+The assistant becomes fully functional based on the current page context.
+
+--------------------------------------------------
+
+BACKEND PLACEHOLDER
+
+Design the UI with placeholders for:
+
+Speech-to-Text
+
+↓
+
+Language Detection
+
+↓
+
+Context Detection
+
+↓
+
+Large Language Model
+
+↓
+
+Intent Recognition
+
+↓
+
+Function Calling
+
+↓
+
+Screen Response
+
+↓
+
+Text-to-Speech
+
+The frontend should indicate these stages with loading and listening animations but should not implement backend logic.
+
+--------------------------------------------------
+
+VOICE PERSONA
+
+Create a consistent AI assistant persona.
+
+Name:
+KrishiMitra AI (or a configurable placeholder)
+
+Personality:
+
+• Friendly
+• Patient
+• Respectful
+• Simple vocabulary
+• Never uses technical jargon unless requested
+• Speaks naturally in the user's selected language
+• Gives step-by-step guidance
+• Confirms important actions before executing them
+
+The UI should include an avatar, waveform animation, listening state, thinking state, speaking state and idle state.
+
+--------------------------------------------------
+
+READ ALOUD
+
+Every page should include a "Read Aloud" option that reads only the currently visible page.
+
+It must not navigate.
+
+It must stop when the page changes.
+
+--------------------------------------------------
+
+FUTURE EXTENSIBILITY
+
+The voice assistant must be designed so future backend services can be plugged in without redesigning the UI.
+
+Do not hardcode responses.
+
+Use placeholders for:
+• Intent
+• Entities
+• Response
+• Suggested Actions
+• Confidence
+
+Keep the frontend modular and integration-ready.
+
+You are an expert Senior UI/UX Designer, Design Systems Architect, and Frontend Engineer specializing in multilingual mobile applications.
+
+I have uploaded my existing agriculture mobile app project. The app is approximately 50% complete. I DO NOT want to redesign it from scratch. Instead, I want to improve and refactor the existing design while preserving its current navigation, features, and user flow.
+
+Project Goal:
+Redesign the existing app into a professional, modern, production-ready mobile application that supports 10 Indian languages:
+• English
+• Hindi
+• Tamil
+• Telugu
+• Kannada
+• Malayalam
+• Marathi
+• Bengali
+• Gujarati
+• Punjabi
+
+Current Problem:
+When switching languages, the interface shows a mixture of English and the selected language. Some labels, buttons, placeholders, dialogs, navigation items, and other UI elements remain in English.
+
+I want to solve ONLY the FRONTEND/UI localization problem. Ignore backend implementation.
+
+Your tasks are:
+
+Analyze the existing project structure and UI.
+Reuse as much of the current design as possible.
+Identify every hardcoded English UI text.
+Create a localization strategy using translation keys instead of hardcoded text.
+Redesign the UI so every screen supports multilingual layouts.
+Build a scalable Design System including:
+Typography
+Colors
+Spacing
+Icons
+Components
+Buttons
+Cards
+Inputs
+Navigation
+Use Auto Layout throughout the design.
+Ensure longer translations never overflow or break the layout.
+Recommend fonts that support all Indian languages (prefer Noto Sans family).
+Organize reusable components and variants.
+Show how language switching should work inside the Figma prototype.
+Replace every UI text layer with localization-ready placeholders or translation keys.
+Ensure there is NO mixed-language UI.
+Preserve accessibility and responsive design principles.
+Keep the redesign modern, clean, and suitable for farmers, students, and government users.
+
+Expected Deliverables:
+UI audit of the existing project
+Redesigned screens
+Localization-ready design system
+Component library
+Translation key structure
+Auto Layout improvements
+Figma organization recommendations
+Best practices for handing off to frontend developers
+
+Do not create a completely new app. Improve and modernize the existing one while making it fully localization-ready for 10 Indian languages.
