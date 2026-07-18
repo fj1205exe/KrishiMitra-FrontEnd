@@ -1,0 +1,586 @@
+Continue improving the EXISTING KrishiMitra application. This is an iterative refinement task. DO NOT redesign, regenerate or remove existing screens. Preserve the current Material 3 design, navigation, color palette, spacing and overall UI while fixing functionality, consistency and user experience issues.
+
+Use the uploaded Plantix reference images only as UX inspiration for interaction patterns, accessibility and information hierarchy. Do NOT copy Plantix branding, layouts or identity. Maintain KrishiMitra's unique visual identity.
+
+==================================================
+GLOBAL RULES
+==================================================
+
+• Never remove an existing feature unless explicitly instructed.
+• Improve existing pages instead of replacing them.
+• Respect SafeArea on every screen.
+• No button, card or input should overlap the bottom navigation bar or system gesture area.
+• Every screen must be responsive across different phone sizes.
+• Every page should feel fast, lightweight and optimized for low-end Android devices.
+• Design all missing backend functionality using placeholders and integration-ready components instead of removing features.
+
+==================================================
+LAYOUT & SPACING
+==================================================
+
+Audit every screen for spacing and alignment issues.
+
+• Maintain consistent spacing between sections.
+• Primary buttons (Next, Continue, Get Started, Checkout etc.) must always have sufficient spacing from the content above.
+• Fix the onboarding pages where buttons appear attached to chips or cards.
+• Ensure all pages scroll correctly.
+• Maintain proper bottom padding after the final component so nothing is hidden behind the navigation bar.
+
+==================================================
+LOCALIZATION
+==================================================
+
+Localization must be 100% complete.
+
+The selected language is the application's single source of truth.
+
+Translate EVERYTHING.
+
+This includes:
+
+• Titles
+• Subtitles
+• Buttons
+• Navigation
+• Bottom Navigation
+• Settings
+• Placeholders
+• Validation messages
+• Error messages
+• Loading text
+• Tooltips
+• Search hints
+• Empty states
+• Marketplace
+• Community
+• Weather
+• Scan
+• AI placeholders
+• Crop names
+• State names
+• District names
+• Government schemes
+• Calculator labels
+
+Mixed-language interfaces are NOT allowed.
+
+Changing the language should instantly update every visible text on every screen.
+
+State names and district names must also appear in the selected language.
+
+==================================================
+VOICE ASSISTANT
+==================================================
+
+Redesign the voice assistant into a backend-ready AI assistant.
+
+Do NOT implement fake conversations.
+
+The frontend should expose integration points for future backend AI.
+
+Before Login:
+
+Allowed:
+
+• Read current page
+• Explain buttons
+• Change language
+
+Not Allowed:
+
+• Navigate to protected pages
+• Open Dashboard
+• Open Community
+• Open Marketplace
+• Open Scan History
+• Access Profile
+
+After Login:
+
+The assistant becomes context-aware.
+
+Every screen exposes its own available commands.
+
+Examples:
+
+Dashboard
+
+• Read weather
+• Read today's tasks
+• Explain dashboard
+
+Weather
+
+• Explain forecast
+• Read humidity
+• Read spraying recommendation
+
+Marketplace
+
+• Search products
+• Read product details
+• Compare products
+
+Crop Details
+
+• Explain crop stage
+• Read cultivation tips
+• Explain disease risk
+
+Scan Results
+
+• Explain diagnosis
+• Read medicine dosage
+• Explain prevention
+
+Community
+
+• Read post
+• Read comments
+
+Settings
+
+• Explain settings
+• Change language
+• Toggle touch sounds
+
+The voice assistant should have:
+
+• Idle state
+• Listening state
+• Thinking state
+• Speaking state
+
+Leave clear placeholders for:
+
+Speech-to-Text
+
+↓
+
+Language Detection
+
+↓
+
+Intent Recognition
+
+↓
+
+Large Language Model
+
+↓
+
+Function Calling
+
+↓
+
+Text-to-Speech
+
+==================================================
+SPLASH SCREEN
+==================================================
+
+Replace the splash screen.
+
+Only show the uploaded KrishiMitra logo centered on the screen.
+
+No unnecessary title.
+
+No large text.
+
+Only subtle fade or scale animation.
+
+Optional loading indicator.
+
+==================================================
+ONBOARDING
+==================================================
+
+Every required field must be validated before allowing the user to continue.
+
+Required order:
+
+Name
+
+State
+
+District
+
+Village
+
+Phone Number
+
+OTP
+
+Farmer Type
+
+Land Type
+
+Land Size
+
+Primary Crops
+
+State must be a searchable dropdown.
+
+District must automatically update according to the selected state.
+
+Village remains a text field.
+
+Validation:
+
+Name
+
+Letters only
+
+Village
+
+Letters only
+
+Phone
+
+Numbers only
+
+OTP
+
+Numbers only
+
+Farm Size
+
+Positive numbers only
+
+Buttons remain disabled until validation succeeds.
+
+==================================================
+USER DATA
+==================================================
+
+Remove every remaining hardcoded value.
+
+Never use:
+
+Ramesh Kumar
+
+Lucknow
+
+or any placeholder user.
+
+Every screen should display the user's actual information entered during onboarding.
+
+Changing profile information must automatically update:
+
+Dashboard
+
+Profile
+
+My Farm
+
+My Crops
+
+Weather
+
+Community
+
+Government Schemes
+
+Recommendations
+
+==================================================
+MY FARM
+==================================================
+
+Generate My Farm dynamically.
+
+Display only the crops selected during onboarding.
+
+If the user edits crops later, My Farm updates automatically.
+
+==================================================
+MY CROPS
+==================================================
+
+Each crop must have its own dedicated information page.
+
+Do NOT reuse the same page.
+
+Every crop should display:
+
+Growth Stage
+
+Crop Health
+
+Diseases
+
+Water Schedule
+
+Fertilizer
+
+Market Price
+
+Harvest Timeline
+
+Cultivation Tips
+
+AI Recommendation
+
+Weather Impact
+
+==================================================
+CROP SELECTION
+==================================================
+
+Replace crop emojis with professional flat crop illustrations.
+
+Each crop should have its own unique botanical icon.
+
+Expand the crop library significantly.
+
+The Get Started button should remain disabled until the minimum required number of crops has been selected according to the chosen land size.
+
+Display helper text explaining how many crops are still required.
+
+==================================================
+SCAN
+==================================================
+
+Restore the Capture button.
+
+Ensure it is always visible above the bottom navigation.
+
+Never allow it to be hidden.
+
+Flow:
+
+Camera
+
+↓
+
+Capture
+
+↓
+
+Processing
+
+↓
+
+Example AI Analysis
+
+↓
+
+Actions
+
+The result page should include:
+
+Captured Image
+
+Disease Name
+
+Confidence Score
+
+Severity
+
+Affected Area
+
+Symptoms
+
+Organic Treatment
+
+Chemical Treatment
+
+Prevention
+
+Recommended Products
+
+Nearby Agriculture Center (placeholder)
+
+Ask AI
+
+Community Discussions
+
+Save Report
+
+Share Report
+
+Scan Again
+
+==================================================
+MARKETPLACE
+==================================================
+
+Add:
+
+Cart button in AppBar
+
+Shopping Cart
+
+Checkout Page
+
+Order Success
+
+My Orders
+
+Wishlist
+
+Product cards should include:
+
+Image
+
+Brand
+
+Verified Seller
+
+Rating
+
+Availability
+
+Discount
+
+Delivery Status
+
+Recommendation Badge
+
+Cart
+
+Wishlist
+
+Checkout should display:
+
+Items
+
+Subtotal
+
+Delivery
+
+Promo Code
+
+Total
+
+Payment Placeholder
+
+Order Confirmation
+
+Market data priority:
+
+1. Live Market API
+
+2. Cached Data
+
+3. Demo Data
+
+4. Offline Catalog
+
+The marketplace must never appear empty.
+
+==================================================
+CULTIVATION TIPS
+==================================================
+
+Create a dedicated Cultivation Tips feature.
+
+Each crop should include:
+
+Season
+
+Land Preparation
+
+Sowing
+
+Watering
+
+Fertilizer
+
+Pest Control
+
+Disease Prevention
+
+Harvest
+
+Storage
+
+Government Advice
+
+Videos (placeholder)
+
+Expert Tips (placeholder)
+
+==================================================
+COMMUNITY
+==================================================
+
+Improve Community.
+
+Add placeholders for:
+
+Expert Verified Answers
+
+AI Suggested Answer
+
+Nearby Farmers
+
+Most Helpful Replies
+
+Voice Read Aloud
+
+==================================================
+SETTINGS
+==================================================
+
+Add:
+
+Language
+
+Touch Sounds (ON by default)
+
+Voice Assistant
+
+Read Aloud
+
+Accessibility
+
+Notifications
+
+Privacy
+
+About
+
+Touch sounds should play on every tap by default and can be disabled from Settings.
+
+==================================================
+ICONS
+==================================================
+
+Audit every icon.
+
+Replace unrelated or repeated icons with context-appropriate Material Symbols or agriculture-themed icons.
+
+==================================================
+PERFORMANCE
+==================================================
+
+Design for performance.
+
+Assume:
+
+Lazy loading
+
+Optimized images
+
+Skeleton loading
+
+Fast navigation
+
+Minimal unnecessary animations
+
+Low memory usage
+
+==================================================
+GLOBAL STATE
+==================================================
+
+The application must use a single shared application state.
+
+Every piece of user information (language, profile, location, selected crops, farm details, settings, touch sounds, voice preferences, cart, orders, etc.) should automatically update every screen that depends on it.
+
+No page should use hardcoded or duplicated data.
+
+Every screen should always display the latest application state without requiring manual refreshes.
+
+The final result should feel like a production-ready agritech application that is fully frontend-complete, backend-ready, highly accessible, fast, consistent, and polished for the Smart India Hackathon.
